@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body
+        {
+            height: 800px;
+            background-color:  #FDF5E6;
+            font-family:  Arial, Helvetica, sans-serif;
+        }
+        .Container
+        {
+            display: grid;
+            grid-gap: 10px;
+            margin: 0 auto;
+            width: 1300px;
+            grid-auto-rows: minmax(100px,auto);
+            grid-template-columns: repeat(8,1fr);
+            grid-template-areas: 
+            "head head head head head head head head"
+            "main main main main main main main main"
+            "main main main main main main main main"
+            "main main main main main main main main"
+            "main main main main main main main main"
+            "main main main main main main main main"
+            "main main main main main main main main"
+            "footer footer footer footer footer footer footer footer"
+            "footer footer footer footer footer footer footer footer"
+            ;
+
+        }
+        .Articles
+        {
+            position: relative;
+            background-color: white;
+            
+            margin-left: 15px;
+        }
+        .Head
+        {
+            grid-area: head;
+        }
+        .Main
+        {
+            grid-area: main;
+            display: grid;
+            margin: 0 auto;
+            width: 1300px;
+            grid-auto-rows: minmax(100px,auto);
+            grid-template-columns: repeat(8,1fr);
+            grid-template-areas:
+            "sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1"
+            "sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1"
+            "sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2"
+            "sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2"
+            "sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3"
+            "sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3"
+            ;
+            
+        }
+        .Footer
+        {
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+            background-color: #222;
+            grid-area: footer;
+        }
+        .Footer>.p1
+        {
+            margin-top: 30px;
+        }
+        .Navigation
+        {
+            padding: 15px;
+            border: 2px solid #222;
+            text-align: center;
+
+        }
+        .Nav>li
+        {
+            
+            border: 1px solid #222;
+            width: 290px;
+            padding: 5px;
+            display: inline-block;
+            margin-left: 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color:  #222;
+            
+            
+        }
+        .NavList>a
+        {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            
+
+        }
+        .Sec1
+        {
+            grid-area: sec1;
+            grid-area: main;
+            display: grid;
+            margin: 0 auto;
+            width: 1300px;
+            grid-auto-rows: minmax(100px,auto);
+            grid-template-columns: repeat(8,1fr);
+            grid-template-areas:
+            "as1 as1 as1 as1 as1 form form form"
+            "as1 as1 as1 as1 as1 form form form"
+            ;
+
+        }
+        .Sec2
+        {
+            grid-area: sec2;
+            
+
+        }
+        .Sec2
+        {
+            display: inline-block;
+        }
+        .Sec3
+        {
+            grid-area: sec3;
+
+        }
+        .As1
+        {
+            width: 700px;
+            height: 350px;
+            grid-area: as1;
+            background-image: url(/Images/banner.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            /* background: linear-gradient(red,blue); */
+
+        }
+        .As1>h1
+        {
+            margin-top: 40px;
+            font-size: 30px;
+        }
+        .Form
+        {
+            width: 300px;
+            text-align: center;
+            grid-area: form;
+            border: 2px solid #222;
+            height: 300px;
+            margin-left: 15px;
+            padding: 10px;
+            position: relative;
+            left: 730px;
+            top: -300px;
+
+        }
+        .Form>hr
+        {
+            
+            margin-left: 50px;
+            width: 200px;
+            border: 1px solid  #222;
+        }
+        .Form>input
+        {
+            margin-top: 20px;
+            border: none;
+        }
+        .Articles>*
+        {
+            display: inline;
+        }
+        #hr1
+        {
+            width: 250px;
+            position: relative;
+            right: 35px;
+            margin-top: 15px;
+        }
+        .Form>a
+        {
+            color: #222;
+        }
+        #but2>a
+        {
+            text-decoration: none;
+            color: #222;
+
+        }
+        #but2
+        {
+            margin-top: 15px;
+            width: 200px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #2691d9 ;
+        }
+        .but12
+        {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #222;
+
+        }
+        .but12>a
+        {
+            text-decoration: none;
+            color: white;
+        }
+        .Sec1>p
+        {
+            margin-top: 10px;
+        }
+        .As3
+        {
+            padding: 15px;
+            text-align: justify;
+            top: -300px;
+            width: 500px;
+            height: 180px;
+            position: relative;
+            left: 700px;
+            border:2px solid #222;
+        }
+        .As2>video
+        {
+            padding: 10px;
+            border: 2px solid #222;
+        }
+        .Articles>button
+        {
+            background-color: #222;
+            text-align: center;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        .Articles button>a
+        {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="Container">
+        <header class="Head">
+            <nav class="Navigation">
+                <ul class="Nav">
+                    <li class="NavList"><a href="#">Home</a></li>
+                    <li class="NavList"><a href="#">Cars</a></li>
+                    <li class="NavList"><a href="#">Drivers</a></li>
+                    <li class="NavList"><a href="#">Teams</a></li>
+                </ul>
+            </nav>
+            <audio src="">
+                
+            </audio>
+        </header>
+        <main class="Main">
+            <section class="Sec2">
+                <aside class="As1">
+                    <h1>Formular 1</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente </p>
+                    <button class="but12"><a href="#">Read More</a></button>
+                </aside>
+                <form action="#" class="Form">
+                    <h2>Login</h2>
+                    <hr id="hr1">
+                    <input type="email" placeholder="type email here">
+                    <hr>
+                    <input type="password" placeholder="type password here">
+                    <hr>
+                    <a href="#">Forgot Password?</a><br>
+
+                    <button id="but2"><a href="#">Login</a></button>
+                </form>
+            </section>
+            <section class="Sec1">
+                <article class="Art1 Articles">
+                    <img src="/Images/ferrari.PNG" alt="">
+                    <p>ferrari</p>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                    elit. Aliquam, cupiditate. Itaque eum exercitationem 
+                    </p>
+                    <button><a href="#">More...</a></button>
+                </article>
+                <article class="Art2 Articles">
+                    <img src="/Images/redbull.PNG" alt="">
+                    <p>Redbull Racing</p>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                    elit. Aliquam, cupiditate. Itaque eum exercitationem 
+                    </p>
+                    <button><a href="#">More...</a></button>
+                </article>
+                <article class="Art3 Articles">
+                    <img src="/Images/amg.PNG" alt="">
+                    <p>Mercedes AMG</p>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                    elit. Aliquam, cupiditate. Itaque eum exercitationem 
+                    </p>
+                    <button><a href="#">More...</a></button>
+                </article>
+                <article class="Art4 Articles">
+                    <img src="/Images/mclaren.PNG" alt="">
+                    <p>Malaren Racing</p>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                    elit. Aliquam, cupiditate. Itaque eum exercitationem 
+                    </p>
+                    <button><a href="#">More...</a></button>
+                </article>
+            </section>
+            <section class="Sec3">
+                <aside class="As2">
+                    <video src="/Images/madmax.mp4"  controls></video>
+                </aside>
+                <aside class="As3">
+                    <h1>Endulge Your Speed Senses</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed dicta neque in exercitationem culpa debitis quod <br>
+                        eaque possimus, ipsa quos modi esse animi vel sit minima. A iste quia natus.
+                    </p>
+                    <button><a href="#">Learn More</a></button>
+                </aside>
+            </section>
+
+        </main>
+        <footer class="Footer">
+            <p class="p1">WPR1X1 ST</p>
+            <img src="/Images/footer.PNG" alt="">
+            <p class="P2">&copy;2022</p>
+        </footer>
+    </section>
+</body>
+</html>
